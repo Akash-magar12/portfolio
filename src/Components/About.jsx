@@ -8,17 +8,26 @@ import {
   ExternalLink,
   Mail,
 } from "lucide-react";
+import {
+  SiHtml5,
+  SiCss3,
+  SiReact,
+  SiJavascript,
+  SiRedux,
+  SiGit,
+  SiGithub,
+} from "react-icons/si";
 import TypeIt from "typeit-react";
 
 const About = () => {
   const techStack = [
-    "HTML",
-    "CSS",
-    "React",
-    "JavaScript",
-    "Redux toolkit",
-    "Git",
-    "Github",
+    { name: "HTML", icon: <SiHtml5 /> },
+    { name: "CSS", icon: <SiCss3 /> },
+    { name: "React", icon: <SiReact /> },
+    { name: "JavaScript", icon: <SiJavascript /> },
+    { name: "Redux toolkit", icon: <SiRedux /> },
+    { name: "Git", icon: <SiGit /> },
+    { name: "Github", icon: <SiGithub /> },
   ];
 
   const techColors = {
@@ -40,16 +49,16 @@ const About = () => {
       {/* Main content */}
       <div className="max-w-6xl w-full text-left text-white font-mono z-10 bg-black rounded-xl border border-gray-800 shadow-xl p-6 md:p-8">
         {/* Terminal header */}
-        <div className="flex items-center justify-between pb-4 border-b border-gray-700/50 mb-6">
+        <div className="flex items-center justify-between pb-4 mt-20 sm:mt-0 border-b border-gray-700/50 mb-6">
           <div className="flex space-x-2">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <div className="text-green-400 text-sm md:text-base">
+          <div className="text-yellow-400 text-sm md:text-base">
             // Frontend Developer
           </div>
-          <div className="text-gray-500 text-xs">akash@dev ~</div>
+          <div className="text-gray-500 text-xs">akash@dev/ ~</div>
         </div>
 
         {/* Terminal code content */}
@@ -89,12 +98,13 @@ const About = () => {
                   {techStack.map((tech, index) => (
                     <span
                       key={index}
-                      className={`px-2 py-1 rounded-md text-sm border ${
-                        techColors[tech] ||
+                      className={`flex items-center gap-2 px-2 py-1 rounded-md text-sm border ${
+                        techColors[tech.name] ||
                         "bg-white/10 text-white border-white/20"
                       }`}
                     >
-                      {tech}
+                      {tech.icon}
+                      {tech.name}
                     </span>
                   ))}
                 </div>
@@ -142,7 +152,7 @@ const About = () => {
               href="#contact"
               className="flex items-center justify-center border border-gray-600 hover:border-emerald-500 text-gray-300 hover:text-emerald-400 py-3 px-6 rounded-md font-medium transition-all duration-300"
             >
-              <Mail className="mr-2 w-4 h-4" aria-label="Contact" />
+              <Mail className="mr-2 w-4 h-4" />
               <span>Contact()</span>
             </a>
 
@@ -152,7 +162,7 @@ const About = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-center border border-gray-600 hover:border-blue-500 text-gray-300 hover:text-blue-400 py-3 px-6 rounded-md font-medium transition-all duration-300"
             >
-              <ExternalLink className="mr-2 w-4 h-4" aria-label="Resume" />
+              <ExternalLink className="mr-2 w-4 h-4" />
               <span>Resume()</span>
             </a>
           </div>

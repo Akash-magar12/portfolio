@@ -10,7 +10,6 @@ const Home = () => {
       <About />
       <Projects />
       <Education />
-
       <Skills />
       <Contact />
     </>

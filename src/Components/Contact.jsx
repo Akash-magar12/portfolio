@@ -114,9 +114,7 @@ const Contact = () => {
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <div className="text-yellow-400 text-sm md:text-base">
-            // Connect With Me
-          </div>
+          <div className="text-yellow-400 text-sm md:text-base">// Contact</div>
           <div className="text-gray-500 text-xs">akash@dev/contact ~</div>
         </div>
 
@@ -132,7 +130,7 @@ const Contact = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact form */}
-            <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+            <div className="bg-black border border-gray-800 rounded-lg p-6">
               <div className="mb-4 text-lg text-emerald-400">
                 <span className="text-gray-400">function</span>{" "}
                 <span className="text-blue-400">sendMessage</span>
@@ -155,7 +153,7 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-gray-800/70 border border-gray-700 rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-white"
+                    className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-white"
                     placeholder="John Doe"
                   />
                 </div>
@@ -174,7 +172,7 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-gray-800/70 border border-gray-700 rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-white"
+                    className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-white"
                     placeholder="johndoe@example.com"
                   />
                 </div>
@@ -193,7 +191,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full bg-gray-800/70 border border-gray-700 rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-white resize-none"
+                    className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-white resize-none"
                     placeholder="Your message here..."
                   ></textarea>
                 </div>
@@ -228,7 +226,7 @@ const Contact = () => {
             {/* Terminal output and social links */}
             <div className="space-y-6">
               {/* Terminal output */}
-              <div className="bg-gray-900/70 p-4 rounded-md border border-gray-800 h-60 overflow-y-auto">
+              <div className="bg-black p-4 rounded-md border border-gray-800 h-60 overflow-y-auto">
                 <div className="flex items-center text-gray-400 mb-3">
                   <Terminal size={16} className="mr-2" />
                   <span className="text-green-400">akash@dev</span>
@@ -260,7 +258,7 @@ const Contact = () => {
               </div>
 
               {/* Social links */}
-              <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+              <div className="bg-black border border-gray-800 rounded-lg p-6">
                 <div className="mb-4 text-lg text-emerald-400">
                   <span className="text-gray-400">const</span>{" "}
                   <span className="text-blue-400">socialConnections</span>{" "}
@@ -276,7 +274,7 @@ const Contact = () => {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center p-3 bg-gray-800/50 border border-gray-700 rounded-md hover:bg-gray-800 transition-all duration-300 ${link.color}`}
+                      className={`flex items-center p-3 bg-black border border-gray-700 rounded-md hover:bg-gray-800 transition-all duration-300 ${link.color}`}
                     >
                       <span className="mr-3">{link.icon}</span>
                       <span>{link.name}</span>

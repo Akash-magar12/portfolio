@@ -1,11 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Code, Terminal, Database, Github, Server, Zap } from "lucide-react";
+import { Code, Terminal, Server, Zap } from "lucide-react";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiRedux,
+  SiTailwindcss,
+  SiBootstrap,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiApollographql,
+  SiPostgresql,
+  SiTypescript,
+  SiDocker,
+  SiNextdotjs,
+} from "react-icons/si";
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("frontend");
   const [blinkVisible, setBlinkVisible] = useState(true);
 
-  // Setup blinking cursor effect
   useEffect(() => {
     const interval = setInterval(() => {
       setBlinkVisible((prev) => !prev);
@@ -30,20 +46,75 @@ const Skills = () => {
 
   const skillsData = {
     frontend: [
-      { name: "HTML5", proficiency: 90, color: "bg-orange-500" },
-      { name: "CSS3", proficiency: 85, color: "bg-blue-500" },
-      { name: "JavaScript", proficiency: 85, color: "bg-yellow-500" },
-      { name: "React.js", proficiency: 80, color: "bg-cyan-500" },
-      { name: "Redux", proficiency: 75, color: "bg-purple-500" },
-      { name: "Tailwind CSS", proficiency: 85, color: "bg-teal-500" },
-      { name: "Bootstrap", proficiency: 80, color: "bg-indigo-500" },
-      { name: "Responsive Design", proficiency: 90, color: "bg-pink-500" },
+      {
+        name: "HTML5",
+        proficiency: 90,
+        color: "bg-orange-500",
+        icon: <SiHtml5 />,
+      },
+      { name: "CSS3", proficiency: 85, color: "bg-blue-500", icon: <SiCss3 /> },
+      {
+        name: "JavaScript",
+        proficiency: 85,
+        color: "bg-yellow-500",
+        icon: <SiJavascript />,
+      },
+      {
+        name: "React.js",
+        proficiency: 80,
+        color: "bg-cyan-500",
+        icon: <SiReact />,
+      },
+      {
+        name: "Redux",
+        proficiency: 75,
+        color: "bg-purple-500",
+        icon: <SiRedux />,
+      },
+      {
+        name: "Tailwind CSS",
+        proficiency: 85,
+        color: "bg-teal-500",
+        icon: <SiTailwindcss />,
+      },
+      {
+        name: "Bootstrap",
+        proficiency: 80,
+        color: "bg-indigo-500",
+        icon: <SiBootstrap />,
+      },
+      {
+        name: "Responsive Design",
+        proficiency: 90,
+        color: "bg-pink-500",
+        icon: <SiReact />,
+      },
     ],
     backend: [
-      { name: "Node.js", proficiency: 70, color: "bg-green-500" },
-      { name: "Express.js", proficiency: 65, color: "bg-gray-500" },
-      { name: "RESTful APIs", proficiency: 75, color: "bg-blue-600" },
-      { name: "MongoDB", proficiency: 60, color: "bg-green-700" },
+      {
+        name: "Node.js",
+        proficiency: 70,
+        color: "bg-green-500",
+        icon: <SiNodedotjs />,
+      },
+      {
+        name: "Express.js",
+        proficiency: 65,
+        color: "bg-gray-500",
+        icon: <SiExpress />,
+      },
+      {
+        name: "RESTful APIs",
+        proficiency: 75,
+        color: "bg-blue-600",
+        icon: <SiApollographql />,
+      },
+      {
+        name: "MongoDB",
+        proficiency: 60,
+        color: "bg-green-700",
+        icon: <SiMongodb />,
+      },
     ],
   };
 
@@ -52,33 +123,26 @@ const Skills = () => {
       id="skills"
       className="min-h-screen flex items-center justify-center bg-black px-4 py-16 relative"
     >
-      {/* Subtle glow elements */}
       <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl opacity-5"></div>
       <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-emerald-500 rounded-full filter blur-3xl opacity-5"></div>
 
-      {/* Main content */}
       <div className="max-w-6xl w-full text-left text-white font-mono z-10 bg-black rounded-xl border border-gray-800 shadow-xl p-6 md:p-8">
-        {/* Terminal header */}
         <div className="flex items-center justify-between pb-4 border-b border-gray-700/50 mb-6">
           <div className="flex space-x-2">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <div className="text-yellow-400 text-sm md:text-base">
-            // Technical Proficiency
-          </div>
+          <div className="text-yellow-400 text-sm md:text-base">// Skills</div>
           <div className="text-gray-500 text-xs">akash@dev/skills ~</div>
         </div>
 
-        {/* Skills content */}
         <div className="space-y-6">
           <div className="text-xl sm:text-2xl text-green-400 font-bold">
             let <span className="text-white">mySkills</span> = require(
             <span className="text-yellow-300">'./technical-skills.js'</span>);
           </div>
 
-          {/* Categories tabs */}
           <div className="flex flex-wrap gap-2 md:gap-4">
             {skillCategories.map((category) => (
               <button
@@ -86,8 +150,8 @@ const Skills = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center px-4 py-2 rounded-md transition-all duration-300 ${
                   activeCategory === category.id
-                    ? "bg-gray-800 border border-gray-700"
-                    : "bg-gray-900 border border-gray-700 opacity-70 hover:opacity-100"
+                    ? "bg-black-800 border border-gray-700"
+                    : "bg-black-900 border border-gray-700 opacity-70 hover:opacity-100"
                 }`}
               >
                 <span className={`mr-2 ${category.color}`}>
@@ -115,13 +179,11 @@ const Skills = () => {
             ))}
           </div>
 
-          {/* Skills display */}
-          <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+          <div className="bg-black border border-gray-800 rounded-lg p-6">
             <div className="mb-4 text-lg text-emerald-400">
               <span className="text-gray-400">import</span> {"{"}{" "}
               {skillCategories.find((c) => c.id === activeCategory)?.title}{" "}
-              {" }"}
-              <span className="text-gray-400">from</span>{" "}
+              {" }"} <span className="text-gray-400">from</span>{" "}
               <span className="text-yellow-300">'./skills'</span>;
             </div>
 
@@ -129,7 +191,8 @@ const Skills = () => {
               {skillsData[activeCategory].map((skill, index) => (
                 <div key={index} className="group">
                   <div className="flex justify-between items-center mb-1">
-                    <span className="text-gray-200 group-hover:text-white transition-colors duration-300">
+                    <span className="text-gray-200  group-hover:text-white transition-colors duration-300 flex items-center gap-2">
+                      <span className={`${skill.color}`}>{skill.icon}</span>
                       {skill.name}
                     </span>
                     <span className="text-gray-400 text-sm">{`${skill.proficiency}%`}</span>
@@ -145,7 +208,6 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* Code comment */}
           <div className="text-gray-500 text-sm flex items-center">
             <span className="text-green-400 mr-2">// </span>
             <Zap size={16} className="mr-2" />
@@ -155,8 +217,7 @@ const Skills = () => {
             </span>
           </div>
 
-          {/* Terminal output */}
-          <div className="bg-gray-900/70 p-4 rounded-md border border-gray-800 mt-6">
+          <div className="bg-black p-4 rounded-md border border-gray-800 mt-6">
             <div className="flex items-center text-gray-400 mb-2">
               <Terminal size={16} className="mr-2" />
               <span className="text-green-400">akash@dev</span>
