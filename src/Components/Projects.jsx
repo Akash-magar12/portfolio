@@ -103,10 +103,6 @@ const Projects = () => {
       id="projects"
       className="min-h-screen bg-black text-white px-4 py-16 relative"
     >
-      {/* Background glows */}
-      <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-5"></div>
-      <div className="absolute bottom-1/3 left-1/3 w-48 h-48 bg-purple-500 rounded-full blur-3xl opacity-5"></div>
-
       <div className="max-w-6xl mx-auto font-mono z-10 relative">
         {/* Terminal header */}
         <div className="bg-black border border-gray-800 rounded-xl shadow-xl p-6 md:p-8">
@@ -116,7 +112,9 @@ const Projects = () => {
               <div className="w-3 h-3 rounded-full bg-yellow-500" />
               <div className="w-3 h-3 rounded-full bg-green-500" />
             </div>
-            <div className="text-yellow-400 text-sm">// Projects</div>
+            <div className="hidden md:block text-yellow-400 text-sm md:text-base">
+              // Projects
+            </div>
             <div className="text-gray-500 text-xs">akash@dev/projects ~</div>
           </div>
 

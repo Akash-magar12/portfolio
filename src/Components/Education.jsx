@@ -6,66 +6,10 @@ import {
   Award,
   ChevronRight,
 } from "lucide-react";
+import { educationData } from "../utils/const";
 
 const Education = () => {
   const [expandedId, setExpandedId] = useState(null);
-
-  const educationData = [
-    {
-      id: 1,
-      degree: "Full Stack Web Development Bootcamp",
-      institution: "Brillic Services",
-      location: "Dehradun, India",
-      duration: "2024-2025",
-      certificate: "Certificate of Completion",
-      details: [
-        "Mastered modern frontend technologies including React and Redux",
-        "Built responsive web applications with HTML5, CSS3, and JavaScript",
-        "Implemented RESTful APIs and worked with various databases",
-      ],
-    },
-    {
-      id: 2,
-      degree: "Bachelor of Business Administration (BBA)",
-      institution: "Uttaranchal University",
-      location: "Dehradun, India",
-      duration: "2020 - 2023",
-      cgpa: "8.83/10",
-      details: [
-        "Developed strong business management and organizational skills",
-        "Studied business analytics and digital marketing principles",
-        "Completed several business case study analyses and projects",
-      ],
-    },
-
-    {
-      id: 3,
-      degree: "Higher Secondary Education (12th)",
-      institution: "Kendriya Vidyalaya Army Area (KV)",
-      location: "Pune, India",
-      duration: "2018 - 2019",
-      cgpa: "8.6/10",
-      details: [
-        "Completed senior secondary education with academic achievement",
-        "Participated in various extracurricular activities",
-        "Developed strong foundations in mathematics and science",
-      ],
-    },
-    {
-      id: 4,
-      degree: "Secondary Education (10th)",
-      institution: "Kendriya Vidyalaya Birpur (KV)",
-      location: "Dehradun, India",
-      duration: "2016 - 2017",
-      cgpa: "10/10",
-      details: [
-        "Completed secondary education with distinction",
-        "Active participant in sports and cultural programs",
-        "Received recognition for academic performance",
-      ],
-    },
-  ];
-
   const toggleDetails = (id) => {
     setExpandedId(expandedId === id ? null : id);
   };
@@ -75,10 +19,6 @@ const Education = () => {
       id="education"
       className="min-h-screen flex items-center justify-center bg-black px-4 py-16 relative"
     >
-      {/* Subtle glow elements matching hero section */}
-      <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl opacity-5"></div>
-      <div className="absolute bottom-1/4 right-1/3 w-32 h-32 bg-emerald-500 rounded-full filter blur-3xl opacity-5"></div>
-
       {/* Main content */}
       <div className="max-w-6xl w-full text-left text-white font-mono z-10 bg-black rounded-xl border border-gray-800 shadow-xl p-6 md:p-8">
         {/* Terminal header */}
@@ -88,8 +28,8 @@ const Education = () => {
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <div className="text-green-400 text-sm md:text-base">
-            // Education 
+          <div className="hidden md:block text-yellow-400 text-sm md:text-base">
+            // Education
           </div>
           <div className="text-gray-500 text-xs">akash@dev/education ~</div>
         </div>

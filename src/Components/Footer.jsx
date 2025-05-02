@@ -49,7 +49,7 @@ const Footer = () => {
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <div className="hidden md:block text-green-400 text-sm md:text-base">
+          <div className="hidden md:block text-yellow-400 text-sm md:text-base">
             // Footer.jsx
           </div>
           <div className="text-gray-500 text-xs text-right">akash@dev ~</div>
@@ -58,7 +58,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left column - Social links */}
           <div>
-            <h3 className="text-xl sm:text-2xl text-yellow-400 font-bold mb-4 flex items-center">
+            <h3 className="text-md sm:text-xl text-yellow-400 font-bold mb-4 flex items-center">
               <Terminal size={18} className="mr-2" />
               <span className="text-white">connect</span>()
             </h3>
@@ -82,7 +82,7 @@ const Footer = () => {
 
           {/* Middle column - Navigation */}
           <div>
-            <h3 className="text-xl sm:text-2xl text-yellow-400 font-bold mb-4 flex items-center">
+            <h3 className="text-md sm:text-xl text-yellow-400 font-bold mb-4 flex items-center">
               <Code size={18} className="mr-2" />
               <span className="text-white">navigate</span>()
             </h3>
@@ -104,7 +104,7 @@ const Footer = () => {
 
           {/* Right column - Info */}
           <div>
-            <h3 className="text-xl sm:text-2xl text-yellow-400 font-bold mb-4 flex items-center">
+            <h3 className="text-md sm:text-xl text-yellow-400 font-bold mb-4 flex items-center">
               <Coffee size={18} className="mr-2" />
               <span className="text-white">info</span>()
             </h3>
