@@ -1,14 +1,9 @@
 import { useState } from "react";
-import {
-  Mail,
-  Linkedin,
-  Twitter,
-  ExternalLink,
-  Send,
-  Github,
-  MessageSquare,
-  ArrowRight,
-} from "lucide-react";
+import { Mail, ExternalLink, Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { BsGithub, BsTwitter } from "react-icons/bs";
+import { SiLinkedin } from "react-icons/si";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -17,10 +12,16 @@ const Contact = () => {
     message: "",
   });
 
+  const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+  const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+  const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
+
+  const [loading, setLoading] = useState(false);
+
   const socialLinks = [
-    { name: "GitHub", icon: <Github size={18} />, url: "#" },
-    { name: "LinkedIn", icon: <Linkedin size={18} />, url: "#" },
-    { name: "Twitter", icon: <Twitter size={18} />, url: "#" },
+    { name: "GitHub", icon: <BsGithub size={18} />, url: "#" },
+    { name: "LinkedIn", icon: <SiLinkedin size={18} />, url: "#" },
+    { name: "Twitter", icon: <BsTwitter size={18} />, url: "#" },
     {
       name: "Email",
       icon: <Mail size={18} />,
@@ -35,20 +36,45 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = () => {
-    console.log("Form submitted:", formState);
-    // Add form submission logic here
+  const handleSubmit = async () => {
+    if (!formState.name || !formState.email || !formState.message) {
+      toast.error("Please fill all the fields.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        },
+        PUBLIC_KEY
+      );
+
+      toast.success("Message sent successfully!");
+      setFormState({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Failed to send message:", error.text);
+      toast.error("Failed to send message.");
+    }
+
+    setLoading(false);
   };
 
   return (
     <section className="min-h-screen flex items-center sm:pt-20 justify-center bg-black px-4 relative overflow-hidden">
       <div className="max-w-6xl w-full text-left text-white font-mono z-10 bg-black rounded-xl border border-gray-800 shadow-xl p-6 md:p-8">
-        {/* Terminal header */}
+        {/* Header */}
         <div className="flex items-center justify-between pb-4 mt-20 sm:mt-0 border-b border-gray-700/50 mb-6">
           <div className="flex space-x-2">
-            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            <div className="w-3 h-3 rounded-full bg-red-500" />
+            <div className="w-3 h-3 rounded-full bg-yellow-500" />
+            <div className="w-3 h-3 rounded-full bg-green-500" />
           </div>
           <div className="hidden md:block text-yellow-400 text-sm md:text-base">
             // Contact
@@ -56,19 +82,19 @@ const Contact = () => {
           <div className="text-gray-500 text-xs">akash@dev/contact ~</div>
         </div>
 
-        {/* Terminal code content */}
+        {/* Main Code-Like UI */}
         <div className="space-y-6">
           <div className="text-xl sm:text-2xl text-yellow-400 font-bold">
             const <span className="text-white">contactMe</span> = {"{"}
           </div>
 
-          {/* Main Content */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ml-4">
-            {/* Contact Form */}
+            {/* Left: Contact Form */}
             <div className="space-y-4">
               <div className="text-base sm:text-lg">
                 sendMessage: {"{"}
                 <div className="ml-4 space-y-4">
+                  {/* Name */}
                   <div className="space-y-2">
                     <label
                       htmlFor="name"
@@ -87,6 +113,7 @@ const Contact = () => {
                     />
                   </div>
 
+                  {/* Email */}
                   <div className="space-y-2">
                     <label
                       htmlFor="email"
@@ -105,6 +132,7 @@ const Contact = () => {
                     />
                   </div>
 
+                  {/* Message */}
                   <div className="space-y-2">
                     <label
                       htmlFor="message"
@@ -128,14 +156,15 @@ const Contact = () => {
 
               <button
                 onClick={handleSubmit}
+                disabled={loading}
                 className="flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white py-3 px-6 rounded-md font-medium transition-all duration-300"
               >
                 <Send size={18} className="mr-2" />
-                <span>submitMessage()</span>
+                <span>{loading ? "Sending..." : "submitMessage()"}</span>
               </button>
             </div>
 
-            {/* Social Links */}
+            {/* Right: Social + Info */}
             <div className="space-y-4">
               <div className="text-base sm:text-lg">
                 socialConnections: [
