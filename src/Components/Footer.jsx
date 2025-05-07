@@ -40,8 +40,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black text-white font-mono py-8 px-4">
-      <div className="max-w-6xl mx-auto bg- border border-gray-700 rounded-lg shadow-md overflow-hidden p-6">
+    <footer className="bg-black text-white font-mono py-8 sm:px-4">
+      <div className="max-w-6xl mx-auto bg- border border-gray-700 rounded-lg shadow-md overflow-hidden p-2">
         {/* Terminal header */}
         <div className="flex items-center justify-between w-full pb-4 border-b border-gray-700 mb-6">
           <div className="flex space-x-2">

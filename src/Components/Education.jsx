@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   GraduationCap,
   Calendar,
@@ -13,14 +13,16 @@ const Education = () => {
   const toggleDetails = (id) => {
     setExpandedId(expandedId === id ? null : id);
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section
       id="education"
-      className="min-h-screen flex items-center justify-center bg-black px-4 py-16 relative"
+      className="min-h-screen flex items-center justify-center bg-black sm:px-4 py-16 relative"
     >
       {/* Main content */}
-      <div className="max-w-6xl w-full text-left text-white font-mono z-10 bg-black rounded-xl border border-gray-800 shadow-xl p-6 md:p-8">
+      <div className="max-w-6xl w-full text-left text-white font-mono z-10 bg-black rounded-xl border border-gray-800 shadow-xl p-2 md:p-8">
         {/* Terminal header */}
         <div className="flex items-center justify-between pb-4 border-b border-gray-700/50 mb-6">
           <div className="flex space-x-2">

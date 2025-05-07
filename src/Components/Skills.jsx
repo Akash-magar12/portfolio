@@ -14,7 +14,9 @@ const Skills = () => {
   }, []);
 
   // Define skillsData directly within the component
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const skillCategories = [
     {
       id: "frontend",
@@ -33,9 +35,9 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen flex items-center justify-center bg-black px-4 py-16 relative"
+      className="min-h-screen flex items-center justify-center bg-black sm:px-4 py-16 relative"
     >
-      <div className="max-w-6xl w-full text-left text-white font-mono z-10 bg-black rounded-xl border border-gray-800 shadow-xl p-6 md:p-8">
+      <div className="max-w-6xl w-full text-left text-white font-mono z-10 bg-black rounded-xl border border-gray-800 shadow-xl p-2 md:p-8">
         <div className="flex items-center justify-between pb-4 border-b border-gray-700/50 mb-6">
           <div className="flex space-x-2">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>

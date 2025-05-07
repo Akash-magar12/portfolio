@@ -17,7 +17,9 @@ const Projects = () => {
     { text: "Loading project data...", color: "text-gray-400" },
     { text: "Project data loaded successfully!", color: "text-green-400" },
   ]);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     const interval = setInterval(() => {
       setBlinkVisible((prev) => !prev);
@@ -44,38 +46,37 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Job Portal",
       description:
-        "A full-featured e-commerce platform with product listings, cart functionality, user authentication, and payment processing.",
-      image: "/api/placeholder/600/400",
-      techStack: ["React", "Node.js", "Express", "MongoDB", "Stripe API"],
+        "A job portal website where users can browse job listings, search for specific roles, view job details, and apply for positions. This was my first project and helped me understand real-world frontend concepts.",
+      techStack: ["React", "Tailwind CSS", "Express", "MongoDB", "Nodejs"],
       features: [
-        "User authentication and profiles",
-        "Product search and filtering",
-        "Shopping cart and checkout",
-        "Payment processing",
-        "Order history and tracking",
+        "Job listing and detailed views",
+        "Search and filter functionality",
+        "Responsive UI design",
+        "Clean and structured layout",
+        "Beginner-friendly architecture",
       ],
-      githubUrl: "https://github.com/yourusername/ecommerce-platform",
-      liveUrl: "https://ecommerce-project.example.com",
+      githubUrl: "https://github.com/yourusername/job-portal", // Replace with your actual GitHub URL
+      liveUrl: "https://frontend-virid-three-20.vercel.app/",
       color: "border-blue-500",
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "Device Collection",
       description:
-        "A productivity application for managing tasks, projects, and team collaboration with drag-and-drop and real-time updates.",
+        "An electronics product showcase website where users can browse a collection of mobile phones, laptops, and accessories. Includes search, filtering, and a clean responsive design.",
       image: "/api/placeholder/600/400",
-      techStack: ["React", "Redux", "Node.js", "Socket.io", "MongoDB"],
+      techStack: ["React", "HTML", "Tailwind CSS"],
       features: [
-        "Task creation and assignment",
-        "Project organization",
-        "Drag-and-drop interface",
-        "Real-time collaboration",
-        "Progress tracking and analytics",
+        "Product listing for devices",
+        "Search and category filtering",
+        "Responsive layout for all devices",
+        "Hover effects and clean UI",
+        "Simple and intuitive navigation",
       ],
-      githubUrl: "https://github.com/yourusername/task-management",
-      liveUrl: "https://task-app.example.com",
+      githubUrl: "https://github.com/yourusername/device-collection", // Replace with actual repo if available
+      liveUrl: "https://device-collection.vercel.app/",
       color: "border-green-500",
     },
     {
@@ -83,7 +84,6 @@ const Projects = () => {
       title: "Weather Dashboard",
       description:
         "An interactive weather application providing real-time weather data, forecasts, and location-based info using modern APIs.",
-      image: "/api/placeholder/600/400",
       techStack: ["React", "Chart.js", "WeatherAPI", "Tailwind CSS"],
       features: [
         "Real-time weather updates",
@@ -105,7 +105,7 @@ const Projects = () => {
     >
       <div className="max-w-6xl mx-auto font-mono z-10 relative">
         {/* Terminal header */}
-        <div className="bg-black border border-gray-800 rounded-xl shadow-xl p-6 md:p-8">
+        <div className="bg-black border border-gray-800 rounded-xl shadow-xl p-2 md:p-8">
           <div className="flex items-center justify-between pb-4 border-b border-gray-700 mb-6">
             <div className="flex space-x-2">
               <div className="w-3 h-3 rounded-full bg-red-500" />
@@ -204,12 +204,6 @@ const Projects = () => {
                   {projectsData[activeProject].description}
                 </p>
               </div>
-
-              <img
-                src={projectsData[activeProject].image}
-                alt={projectsData[activeProject].title}
-                className="rounded-md border border-gray-700 w-full"
-              />
 
               {/* Tech Stack */}
               <div>

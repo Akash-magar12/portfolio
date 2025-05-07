@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Mail, ExternalLink, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { BsGithub, BsTwitter } from "react-icons/bs";
@@ -11,7 +11,9 @@ const Contact = () => {
     email: "",
     message: "",
   });
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
   const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
   const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
@@ -67,8 +69,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center sm:pt-20 justify-center bg-black px-4 relative overflow-hidden">
-      <div className="max-w-6xl w-full text-left text-white font-mono z-10 bg-black rounded-xl border border-gray-800 shadow-xl p-6 md:p-8">
+    <section className="min-h-screen flex items-center sm:pt-20 justify-center bg-black sm:px-4 relative overflow-hidden">
+      <div className="max-w-6xl w-full text-left text-white font-mono z-10 bg-black rounded-xl border border-gray-800 shadow-xl p-2 md:p-8">
         {/* Header */}
         <div className="flex items-center justify-between pb-4 mt-20 sm:mt-0 border-b border-gray-700/50 mb-6">
           <div className="flex space-x-2">

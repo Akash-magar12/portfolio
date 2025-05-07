@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Code,
   MapPin,
@@ -14,10 +14,13 @@ import { learningStack, techColors, techStack } from "../utils/const";
 import { Link } from "react-router";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <section className="min-h-screen flex items-center sm:pt-20 justify-center bg-black px-4 relative overflow-hidden">
+    <section className="min-h-screen flex items-center sm:pt-20 justify-center bg-black sm:px-4 relative overflow-hidden">
       {/* Main content */}
-      <div className="max-w-6xl w-full text-left text-white font-mono z-10 bg-black rounded-xl border border-gray-800 shadow-xl p-6 md:p-8">
+      <div className="max-w-6xl w-full text-left text-white font-mono z-10 bg-black rounded-xl border border-gray-800 shadow-xl p-2 md:p-8">
         {/* Terminal header */}
         <div className="flex items-center justify-between pb-4 mt-20 sm:mt-0 border-b border-gray-700/50 mb-6">
           <div className="flex space-x-2">

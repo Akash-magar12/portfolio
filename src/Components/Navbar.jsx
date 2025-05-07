@@ -41,11 +41,11 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full text-white shadow-lg z-50 py-4 px-6 bg-black">
+      <nav className="fixed top-0 left-0 w-full text-white shadow-lg z-50 py-4 px-2 bg-black">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <div className="text-xl font-mono font-bold text-emerald-400">
+            <div className="sm:text-xl font-mono font-bold text-emerald-400">
               <span className="text-white">const</span> myPortfolio{" "}
               <span className="text-white">=</span>{" "}
               <span className="text-yellow-400">&#123;</span>
