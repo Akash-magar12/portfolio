@@ -81,20 +81,20 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Weather Dashboard",
+      title: "SnapNest",
       description:
-        "An interactive weather application providing real-time weather data, forecasts, and location-based info using modern APIs.",
-      techStack: ["React", "Chart.js", "WeatherAPI", "Tailwind CSS"],
+        "A Pinterest-inspired web app where users can post, save, and search pins. Built with full MERN stack and includes user authentication, profile pages, and commenting.",
+      techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
       features: [
-        "Real-time weather updates",
-        "5-day forecast",
-        "Interactive maps",
-        "Location search",
-        "Weather alerts and notifications",
+        "Create & save pins",
+        "Search & filter pins by category",
+        "User profiles and comments",
+        "Responsive grid layout",
+        "JWT Authentication",
       ],
-      githubUrl: "https://github.com/yourusername/weather-dashboard",
-      liveUrl: "https://weather-app.example.com",
-      color: "border-purple-500",
+      githubUrl: "https://github.com/Akash-magar12/SnapNest",
+      liveUrl: "https://pin-nest.vercel.app/",
+      color: "border-pink-500",
     },
   ];
 
